@@ -18,7 +18,8 @@ from time import sleep,time
 from threading import Thread
 
 class Nodo():
-  C = 1
+  C = 0.8
+
   count = 0 #variável de debug. Utilizada para saber o número total de nodos visitados durante a execução do código
 
   def __init__(self,gamestate,custo,jogada,pai = None):
@@ -50,7 +51,10 @@ class Nodo():
       return 1
 
 
-    return (self.vitorias/self.visitas + self.C * sqrt(log(self.pai.visitas)/self.visitas ))
+
+
+
+    return (self.vitorias/self.visitas + (self.C - self.custo/60) * sqrt(log(self.pai.visitas)/self.visitas ))
 
   def criar_tabuleiro(self):
     if(self.jogada is not None):
@@ -66,10 +70,30 @@ class Nodo():
         
         self.filhos.append(Nodo(None,self.custo+1,jogada,self))
 
+    return self.vitorias/self.visitas
+
   def escolhe_melhor_filho(self):
     if(self.filhos):
       filhos = sorted(self.filhos, key = Nodo.UCB, reverse = True)
+
+      # qtd_filhos = len(self.filhos)
+      # i = 0
+      # while i+1 < qtd_filhos and filhos[i].UCB() == filhos[i+1].UCB()
+      #   i+=1
+
       return filhos[0]
+
+  def escolhe_melhor_jogada(self):
+    if(self.filhos):
+      filhos = sorted(self.filhos, key = Nodo.taxa_vitoria, reverse = True)
+      return filhos[0]
+
+  def taxa_vitoria(self):
+    if(self.visitas == 0):
+      return 0
+
+    else:
+      return self.vitorias/self.visitas
 
   def visitar_nodo(self):
     self.visitas += 1
@@ -100,7 +124,7 @@ def make_move(estado_atual):
 
 
   # print(arvore.visitas)
-  best = arvore.escolhe_melhor_filho()
+  best = arvore.escolhe_melhor_jogada()
  # print(best.jogada)
 
 
