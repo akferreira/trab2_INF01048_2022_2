@@ -32,10 +32,11 @@ class Nodo():
     self.filhos = []
 
 
-
+  #Verifica se o jogador cujo turno criou esse nodo ganhou ou não. Se o turno atual é das brancas, é porque as pretas jogaram na última jogada e 
+  #culminaram no estado atual do tabuleiro. 
   def verificar_vitoria(self,ganhador = None):
     if(self.gamestate.is_terminal()):
-      if(self.gamestate.winner() == self.pai.gamestate.player):
+      if(self.gamestate.winner() == self.pai.gamestate.player): 
         self.vitorias += 1
       return self.gamestate.winner()
     
@@ -47,15 +48,14 @@ class Nodo():
         pass
 
   def UCB(self):
+    #Para nodos sem visitas, ou a raiz da árvore. 
     if(self.pai is None or self.visitas == 0):
       return 1
-
-
-
-
-
+    
+    #self.custo/60 é um parâmetro para ligeiramente alterar o coeficiente de exploração da MCTS quando se chega nos níveis mais profundos da árvore
     return (self.vitorias/self.visitas + (self.C - self.custo/60) * sqrt(log(self.pai.visitas)/self.visitas ))
 
+  #Para fins de otimização, o tabuleiro só é criado quando necessário a partir do gamestate
   def criar_tabuleiro(self):
     if(self.jogada is not None):
       next_gamestate = self.pai.gamestate.next_state(self.jogada)
@@ -76,11 +76,6 @@ class Nodo():
     if(self.filhos):
       filhos = sorted(self.filhos, key = Nodo.UCB, reverse = True)
 
-      # qtd_filhos = len(self.filhos)
-      # i = 0
-      # while i+1 < qtd_filhos and filhos[i].UCB() == filhos[i+1].UCB()
-      #   i+=1
-
       return filhos[0]
 
   def escolhe_melhor_jogada(self):
@@ -88,6 +83,7 @@ class Nodo():
       filhos = sorted(self.filhos, key = Nodo.taxa_vitoria, reverse = True)
       return filhos[0]
 
+  #para escolher a melhor jogada desse turno. Não considera coeficiente de exploração
   def taxa_vitoria(self):
     if(self.visitas == 0):
       return 0
