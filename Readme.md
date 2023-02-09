@@ -11,6 +11,9 @@ eventuais melhorias (quiescence search, singular extensions, etc para a poda alf
 decisões de projeto e dificuldades encontradas; 
 e bibliografia completa (incluindo sites).
 
+# Estratégia
+UBC - Upper Confidence Bound foi a estratégia escolhida para abordar o problema.
+
 # Kit othello
 Kit para executar partidas de Othello e implementar o algoritmo de poda alfa-beta.
 
