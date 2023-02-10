@@ -1,6 +1,11 @@
-Arthur Kassick Ferreira 00288545  Turma B
-Cássio Entrudo 00252847 Turma B
-Leonardo Luis Carlos 00243909 Turma B
+# Othello | Trabalho 2 da disciplina de Inteligência Artificial INF01048
+- Arthur Kassick Ferreira | 00301388 | Turma B
+
+- Cássio Entrudo | 00252847 | Turma B
+
+- Leonardo Luis Carlos | 00243909 | Turma B
+==============================================================================
+
 
 O relatório deve conter: 
 
