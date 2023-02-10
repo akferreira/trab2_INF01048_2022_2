@@ -26,4 +26,6 @@ UBC - Upper Confidence Bound foi a estratégia escolhida para abordar o problema
 ## Condição de parada:
     Foi utilizado o tempo limite de 5 segundos ou que atinja um estado terminal
 # Eventuais melhorias
+Na função UCB, foi comentada uma linha que altera o retorno que altera o coeficiente de exploração da árvore caso tenha níveis mais profundos
+    #self.custo/60 é um parâmetro para ligeiramente alterar o coeficiente de exploração da MCTS quando se chega nos níveis mais profundos da árvore
 # Dificuldades encontradas
