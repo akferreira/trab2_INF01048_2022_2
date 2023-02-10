@@ -2,7 +2,7 @@ Arthur Kassick Ferreira 00288545  Turma B
 Cássio Entrudo 00252847 Turma B
 Leonardo Luis Carlos 00243909 Turma B
 
-#Bibliotecas utilizadas
+# Bibliotecas utilizadas
 ```
 import random
 from typing import Tuple
@@ -15,7 +15,9 @@ Foi utilizado uma estratégia de MCTS (Mount Carlo Tree search) para criar uma �
 
 No que diz respeito a implementação do código para o MCTS, escolheu-se uma abordagem recursiva para a descida na árvore pela facilidade que ela fornece de fazer o movimento reverso de subida, isto é, de atualizar os nodos visitados no caminho ao nodo folha encontrado e do resultado do jogo (vitória das peças brancas, pretas ou do empate).
 
+ ```
  UCB = (self.vitorias/self.visitas + (self.C - self.custo/60) * sqrt(log(self.pai.visitas)/self.visitas ))
+ ```
  
 ## Condição de parada:
    
