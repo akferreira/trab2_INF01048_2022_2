@@ -3,11 +3,12 @@ Cássio Entrudo 00252847 Turma B
 Leonardo Luis Carlos 00243909 Turma B
 
 #Bibliotecas utilizadas
-
+```
 import random
 from typing import Tuple
 from math import sqrt,log
 from time import sleep,time
+````
 
 # Estratégia
 Foi utilizado uma estratégia de MCTS (Mount Carlo Tree search) para criar uma árvore com as diferentes possibilidades de jogo a fim de buscar as jogadas com as maiores chances de vitória. Cada exploração da árvore consiste em simular um conjunto de possívieis movimentos do tabuleiro que levem, a partir do estado inicial dado, a um estado final do jogo no qual um dos jogadores vença ou que ocorra o empate. Como critério para escolha dos nodos ao se aprofundar na árvore, o MCTS usa o critério UBC - Upper Confidence Bound - o qual leva em consideração tanto a taxa de vitórias encontradas nos nodos visitados, quanto a taxa (ou coeficiente) de exploração escolhida para o problema.
