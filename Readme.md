@@ -16,7 +16,7 @@ eventuais melhorias (quiescence search, singular extensions, etc para a poda alf
 decisões de projeto e dificuldades encontradas; 
 e bibliografia completa (incluindo sites).
 
-#Bibliotecas utilizadas
+# Bibliotecas utilizadas
 import threading
 import time
 import random
