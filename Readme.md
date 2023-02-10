@@ -11,6 +11,12 @@ eventuais melhorias (quiescence search, singular extensions, etc para a poda alf
 decisões de projeto e dificuldades encontradas; 
 e bibliografia completa (incluindo sites).
 
+#Bibliotecas utilizadas
+import threading
+import time
+import random
+from typing import Tuple
+
 # Estratégia
 UBC - Upper Confidence Bound foi a estratégia escolhida para abordar o problema.
 ## Condição de parada:
