@@ -28,4 +28,7 @@ UBC - Upper Confidence Bound foi a estratégia escolhida para abordar o problema
 # Eventuais melhorias
 Na função UCB, foi comentada uma linha que altera o retorno que altera o coeficiente de exploração da árvore caso tenha níveis mais profundos
     (#self.custo/60 é um parâmetro para ligeiramente alterar o coeficiente de exploração da MCTS)
-# Dificuldades encontradas
+  ### Algumas das dificuldades encontradas: 
+  - Problemas em se acertar com a biblioteca de time;
+  - Problema na retira do nó com melhor escolha;
+  - Problema com jogadas inválidas quando a melhor não estava disponível
