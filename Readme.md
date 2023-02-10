@@ -50,8 +50,13 @@ Visto a ineficiência dessas funções, a solução encontrada para minimizar ao
 # Bibliografia
 
 https://en.wikipedia.org/wiki/Monte_Carlo_tree_search
+
 https://www.geeksforgeeks.org/ml-monte-carlo-tree-search-mcts/
+
 https://towardsdatascience.com/monte-carlo-tree-search-158a917a8baa
+
 https://www.cs.swarthmore.edu/~mitchell/classes/cs63/f20/reading/mcts.html
+
 https://www.programiz.com/python-programming/time
+
 https://docs.python.org/3/library/profile.html
