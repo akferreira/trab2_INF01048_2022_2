@@ -18,7 +18,16 @@ import random
 from typing import Tuple
 
 # Estratégia
-UBC - Upper Confidence Bound foi a estratégia escolhida para abordar o problema.
+UBC - Upper Confidence Bound foi a estratégia escolhida para abordar o problema. Foi implementado no agent.py
+`
+  def UCB(self):
+    #Para nodos sem visitas, ou a raiz da árvore. 
+    if(self.pai is None or self.visitas == 0):
+      return 1
+    
+    #self.custo/60 é um parâmetro para ligeiramente alterar o coeficiente de exploração da MCTS quando se chega nos níveis mais profundos da árvore
+    return (self.vitorias/self.visitas + (self.C - self.custo/60) * sqrt(log(self.pai.visitas)/self.visitas ))
+    `
 ## Condição de parada:
     Foi utilizado o tempo limite de 5 segundos ou que atinja um estado terminal
 # Eventuais melhorias
