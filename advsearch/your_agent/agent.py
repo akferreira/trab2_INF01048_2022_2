@@ -2,20 +2,8 @@ import random
 from typing import Tuple
 
 from ..othello.gamestate import GameState
-
-# Voce pode criar funcoes auxiliares neste arquivo
-# e tambem modulos auxiliares neste pacote.
-#
-# Nao esqueca de renomear 'your_agent' com o nome
-# do seu agente.
-
-
 from math import sqrt,log
-
-from queue import Empty as qEmpty
-from collections import deque
 from time import sleep,time
-from threading import Thread
 
 class Nodo():
   C = 0.8
@@ -117,27 +105,12 @@ def make_move(estado_atual):
   while(now - start < 4.9):
     explorar_arvore(arvore)
     now = time()
-
-
-  # print(arvore.visitas)
+    
   best = arvore.escolhe_melhor_jogada()
- # print(best.jogada)
-
-
- # for filho in arvore.filhos:
-   # print(f"{filho.vitorias}/{filho.visitas}")
-   # for x in filho.filhos:
-   #   print(f"\t {x.vitorias}/{x.visitas}")
-
- # print(Nodo.count)
   return best.jogada
 
 
 
-#estado = GameState(tabuleiro,'B')
-#arvore = Nodo(estado,0,None)
-#print(arvore.gamestate.winner())
 
-#make_move(estado)
 
 
