@@ -13,5 +13,7 @@ e bibliografia completa (incluindo sites).
 
 # Estratégia
 UBC - Upper Confidence Bound foi a estratégia escolhida para abordar o problema.
+## Condição de parada:
+    Foi utilizado o tempo limite de 5 segundos ou que atinja um estado terminal
 # Eventuais melhorias
 # Dificuldades encontradas
